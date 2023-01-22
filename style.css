@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*medida da largurda box: sempre mantém abox na largura original definida*/
+}
+
+body {
+  background-color: #09090a;
+  color: white;
+  height: 100vh;
+  /*
+  #Sem a desclaração 'display' a centralização da declaração 'place-itens'  não funciona
+  display: grid;
+  place-items: center;
+
+  #para  tirara margem da tela
+  height: 100vw;
+  */
+}
+
+/*body * {
+  border: 1px solid red; #borda
+  margin: 24px;  #margem externa da box
+  padding: 24px; #margem interna da box
+}*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /*separar os elementos  com um espaço*/
+  padding: 48px;
+  position: fixed;
+  width: 100%; /*largura*/
+}
+
+button {
+  padding: 16px /*borda superior/inferior*/ 24px /*borda das laterais*/;
+  border-radius: 8px; /*arredondamento da borda*/
+  border: 1px solid #8b5cf6;
+  background-color: transparent;
+  color: white;
+
+  display: flex; /*um botão tem por padrão a orientação 'inline', ou seja, se organiza como se tivese uma linha. Colocando essa  declaração 'flex', você o transforma em flexivel*/
+  align-items: center;
+  gap: 12px; /*#só pode usar junto com o 'flex'. Signiofica espaço entre  os elementos*/
+
+  font-family: "Inter"; /*fonte*/
+  font-weight: 600; /*peso da fonte-grossura*/
+  font-size: 16px; /*tamanho da fonte*/
+  line-height: 125%; /*??????????*/
+}
+
+#form-habits {
+  display: flex;
+
+  padding: 182px /*margem superior*/ 48px /*margem das laterais*/ 48px
+    /*margem inferior*/;
+  width: fit-content; /*encaixar o conteudo na tela lateralmente*/
+}
+
+.habits {
+  margin-top: 60px; /*alinhar os emojis com as checkboxes*/
+  display: flex;
+  flex-direction: column; /*alinhas um emoji abaixo do outro*/
+  gap: 24px;
+}
+
+.habit {
+  width: 64px;
+  height: 64px;
+
+  font-size: 32px;
+
+  display: flex; /*flexibilizar os emojis na box*/
+  align-items: center; /*alinha verticalmente na box*/
+  justify-content: center; /*alinha horizontalmente na box*/
+}
+
+.days {
+  /*para deixar os dias um ao lado do outro*/
+  display: flex;
+  gap: 48px;
+  margin-left: 32px; /*espaço dos dias em relação aos emojis*/
+}
+
+.day {
+  /*para deixar as checkboxes uma ao lado da outra como coluna*/
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+
+.day div {
+  margin-bottom: 8px; /*????????*/
+
+  font-family: "Roboto Mono";
+  font-size: 20px;
+  line-height: 125%;
+  color: #a1a1aa;
+  text-align: center; /*centralizar o dia com relação as check*/
+}
+
+input {
+  /*checkbox desmarcada*/
+  appearance: none; /*sem isso não tem como colocar borda no 'input'*/
+  -webkit-appearance: none; /*sem isso não tem como colocar borda no 'input'*/
+
+  width: 64px; /*altura*/
+  height: 64px; /*largura*/
+
+  border: 2px solid #27272a;
+  border-radius: 8px;
+  background-color: #18181b;
+}
+
+input:checked {
+  /*checkbox marcada*/
+  background-color: #8b5cf6;
+  border: 2px solid #a78bfa;
+}
+
+@media (max-width: 570px) /*quando a tela tiver até esses px*/ {
+  button div {
+    display: none; /*sumir com o texto do button*/
+  }
+}
