@@ -14,11 +14,22 @@ function add() {
   const dayExists = nlwSetup.dayExists(today) //vai ir na nlwSetup e verificar se o dia existe
 
   if (dayExists) {
-    alert("Dia já incluso ⚠")
+    Swal.fire({
+      title: "Habits diz",
+      text: "Dia já incluso! ⚠",
+      icon: "error",
+      confirmButtonText: "OK",
+    })
     return //se o dia ja existe, abre um popup com a mensagem
   }
 
-  alert("Adicionado com sucesso! 🎉")
+  Swal.fire({
+    title: "Habits diz",
+    text: "Adicionado com sucesso! 🎉",
+    icon: "success",
+    confirmButtonText: "OK",
+  })
+
   nlwSetup.addDay(today) //add o dia da variavel today
 }
 
